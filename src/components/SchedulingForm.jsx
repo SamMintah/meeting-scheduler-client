@@ -42,7 +42,7 @@ export const SchedulingForm = ({ onSubmit, initialData }) => {
   const fetchAvailableSlots = async (date) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/users/1/available-slots?date=${
+        `https://meeting-scheduler-backend.onrender.com/api/users/1/available-slots?date=${
           date.toISOString().split('T')[0]
         }`
       );

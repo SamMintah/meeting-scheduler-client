@@ -11,7 +11,7 @@ function App() {
   const [meetings, setMeetings] = useState([]);
   const [editingMeeting, setEditingMeeting] = useState(null);
 
-  const API_URL = 'http://localhost:3000';
+  const API_URL = 'https://meeting-scheduler-backend.onrender.com';
 
   // Fetch meetings from backend when component mounts
   useEffect(() => {
@@ -42,9 +42,6 @@ function App() {
       const url = editingMeeting 
         ? `${API_URL}/api/meetings/${editingMeeting.id}`
         : `${API_URL}/api/meetings`;
-      
-      console.log("url", url);
-      console.log("payload", payload);
       
       const response = await axios({
         method: editingMeeting ? 'put' : 'post',
